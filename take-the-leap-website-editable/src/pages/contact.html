@@ -80,10 +80,15 @@
     <div class="reveal">
       <h3>Send a message</h3>
       <p>For masterclass and workshop enquiries, or anything you'd rather explain in writing first.</p>
-      <form>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
         <div class="form-row">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required>
+
         </div>
         <div class="form-row">
           <label for="email">Email</label>
@@ -98,7 +103,6 @@
           <textarea id="message" name="message" placeholder="Tell me a bit about what you're working on..."></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send message</button>
-        <p style="font-family:var(--mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; margin-top:12px; color:var(--ink-soft);">Connect this form to your email or form handler of choice</p>
       </form>
     </div>
 
