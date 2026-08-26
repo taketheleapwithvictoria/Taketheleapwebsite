@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: Blog
+description: Notes on pitching, communication and founder confidence from Victoria Howe.
+---
+<header class="section" style="padding-bottom:0;">
+  <div class="section-inner reveal">
+    <span class="tag">Field notes</span>
+    <h1 style="max-width:16ch;">Notes on pitching, communication &amp; confidence.</h1>
+    <p class="lede" style="max-width:56ch; font-size:1.1rem;">Practical, unfiltered thinking from a decade of reading people under pressure &mdash; now applied to founders and pitches instead of interview rooms.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="post-grid">
+      {% for post in collections.posts | reverse %}
+      <a href="{{ post.url }}" class="post-card reveal">
+        <div class="post-thumb" style="display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:0.7rem; color:var(--gold-deep); letter-spacing:0.08em;">{{ post.data.fileNo or "FILE" }}</div>
+        <div class="post-body">
+          <div class="post-meta">{{ post.data.category or "Pitching" }} &middot; {{ post.data.readTime or "4 min read" }}</div>
+          <h3>{{ post.data.title }}</h3>
+          <p>{{ post.data.excerpt }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

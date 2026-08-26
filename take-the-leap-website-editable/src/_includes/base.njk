@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} | Take the Leap</title>
+<meta name="description" content="{{ excerpt or description }}">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/index.html" class="brand">Take the Leap <span>/ Victoria</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/results.html">Results</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/contact.html" class="btn btn-primary nav-cta">Book a session</a>
+    </div>
+  </div>
+</nav>
+
+{{ content | safe }}
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="brand" style="margin-bottom:10px;">Take the Leap <span>/ Victoria</span></div>
+      <div class="footer-meta">victoria@taketheleapwithvictoria.com</div>
+    </div>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/results.html">Results</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://www.linkedin.com/in/victoria-howe-457a04252/">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

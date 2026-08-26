@@ -1,0 +1,22 @@
+---
+layout: base.njk
+---
+<header class="section tight">
+  <div class="section-inner reveal" style="max-width:680px; margin:0 auto;">
+    <div class="post-meta">{{ category or "Pitching" }} &middot; {{ readTime or "4 min read" }}</div>
+    <h1>{{ title }}</h1>
+  </div>
+</header>
+
+<section class="section tight">
+  <article class="post-content reveal">
+    {{ content | safe }}
+  </article>
+</section>
+
+<section class="section alt">
+  <div class="section-inner reveal" style="text-align:center;">
+    <h3>Want to work on this together?</h3>
+    <a href="/contact.html" class="btn btn-primary" style="margin-top:16px;">Book a session</a>
+  </div>
+</section>

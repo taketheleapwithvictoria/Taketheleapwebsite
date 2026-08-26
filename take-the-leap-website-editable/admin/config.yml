@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# After deploying, Netlify Identity + Git Gateway (set up in your Netlify
+# dashboard) handles login — no separate username/password system to manage.
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/blog/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "string", default: "Pitching" }
+      - { label: "Read Time", name: "readTime", widget: "string", default: "4 min read" }
+      - { label: "File Number (small label on the blog grid)", name: "fileNo", widget: "string", default: "FILE" }
+      - { label: "Short Excerpt (shown on the blog listing page)", name: "excerpt", widget: "text" }
+      - { label: "Post Content", name: "body", widget: "markdown" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: "posts" }
