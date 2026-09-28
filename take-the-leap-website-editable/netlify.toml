@@ -2,7 +2,23 @@
   command = "npm run build"
   publish = "_site"
 
+# The old Results page was folded into Services.
+[[redirects]]
+  from = "/results"
+  to = "/services#outcomes"
+  status = 301
+
+[[redirects]]
+  from = "/results.html"
+  to = "/services#outcomes"
+  status = 301
+
 [[redirects]]
   from = "/blog/index.html"
   to = "/blog/"
   status = 301
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

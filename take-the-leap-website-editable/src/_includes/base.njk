@@ -1,48 +1,104 @@
+{%- set site = "https://taketheleapwithvictoria.com" -%}
+{%- set cleanUrl = page.url | replace(".html", "") -%}
+{%- if cleanUrl == "/index" %}{% set cleanUrl = "/" %}{% endif -%}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ title }} | Take the Leap</title>
-<meta name="description" content="{{ excerpt or description }}">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% if fullTitle %}{{ fullTitle }}{% else %}{{ title }} | Victoria Howe, Take the Leap{% endif %}</title>
+<meta name="description" content="{{ description or excerpt }}">
+<link rel="canonical" href="{{ site }}{{ cleanUrl }}">
+<meta property="og:type" content="{{ 'article' if layout == 'post.njk' else 'website' }}">
+<meta property="og:site_name" content="Take the Leap with Victoria">
+<meta property="og:title" content="{% if fullTitle %}{{ fullTitle }}{% else %}{{ title }} | Victoria Howe{% endif %}">
+<meta property="og:description" content="{{ description or excerpt }}">
+<meta property="og:url" content="{{ site }}{{ cleanUrl }}">
+<meta property="og:image" content="{{ site }}/images/og-image.jpg">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1C1220">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600&family=Figtree:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/css/style.css">
+{%- if cleanUrl == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Take the Leap with Victoria",
+  "url": "{{ site }}/",
+  "image": "{{ site }}/images/og-image.jpg",
+  "email": "victoria@taketheleapwithvictoria.com",
+  "telephone": "+61410002378",
+  "areaServed": "Perth, Western Australia",
+  "description": "Pitching, communication and practical startup support for founders. Keynote speaking and pitch masterclasses by Victoria Howe.",
+  "founder": {
+    "@type": "Person",
+    "name": "Victoria Howe",
+    "jobTitle": "Speaker, pitch and communication specialist",
+    "sameAs": [{% for l in social.links | selectattr("url") %}"{{ l.url }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+  }
+}
+</script>
+{%- endif %}
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="/index.html" class="brand">Take the Leap <span>/ Victoria</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/results.html">Results</a>
-      <a href="/blog/" class="active">Blog</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/contact.html" class="btn btn-primary nav-cta">Book a session</a>
-    </div>
+<header class="nav">
+  <div class="wrap">
+    <a href="/" class="brand" aria-label="Take the Leap with Victoria, home">
+      <img src="/images/logo.png" alt="Take the Leap with Victoria" width="440" height="261">
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/speaking"{% if cleanUrl == "/speaking" %} aria-current="page"{% endif %}>Speaking</a>
+      <a href="/services"{% if cleanUrl == "/services" %} aria-current="page"{% endif %}>Sessions &amp; workshops</a>
+      <a href="/about"{% if cleanUrl == "/about" %} aria-current="page"{% endif %}>About</a>
+      <a href="/blog/"{% if "/blog/" in page.url %} aria-current="page"{% endif %}>Blog</a>
+      <a href="/contact"{% if cleanUrl == "/contact" %} aria-current="page"{% endif %}>Contact</a>
+      <a href="/services#book" class="btn btn-solid">Book a session</a>
+    </nav>
   </div>
-</nav>
+</header>
 
+<main id="main">
 {{ content | safe }}
+</main>
 
-<footer>
-  <div class="footer-inner">
+<footer class="footer on-dark">
+  <div class="wrap">
+    <div class="brandcol">
+      <p class="tagline">Clear. Confident. <span>Ready.</span></p>
+      <p style="margin-top:12px;max-width:30em">Pitching, communication and practical startup support for founders. Keynotes and masterclasses for events and programs. Based in Perth, Western Australia.</p>
+    </div>
     <div>
-      <div class="brand" style="margin-bottom:10px;">Take the Leap <span>/ Victoria</span></div>
-      <div class="footer-meta">victoria@taketheleapwithvictoria.com</div>
+      <h2>Explore</h2>
+      <ul>
+        <li><a href="/speaking">Speaking</a></li>
+        <li><a href="/services">1:1 sessions</a></li>
+        <li><a href="/services#workshops">Masterclasses &amp; workshops</a></li>
+        <li><a href="/about">About Victoria</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
     </div>
-    <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/results.html">Results</a>
-      <a href="/blog/">Blog</a>
-      <a href="/contact.html">Contact</a>
-      <a href="https://www.linkedin.com/in/victoria-howe-457a04252/">LinkedIn</a>
+    <div>
+      <h2>Get in touch</h2>
+      <ul>
+        <li><a href="mailto:victoria@taketheleapwithvictoria.com">victoria@taketheleapwithvictoria.com</a></li>
+        <li><a href="tel:+61410002378">0410 002 378</a></li>
+        {%- for l in social.links %}{% if l.url %}
+        <li><a href="{{ l.url }}" rel="me noopener">{{ l.name }}</a></li>
+        {%- endif %}{% endfor %}
+        <li><a href="/contact">Contact form</a></li>
+      </ul>
     </div>
+    <p class="small">&copy; {{ "now" | year }} Take the Leap with Victoria &middot; Victoria Howe &middot; Perth, WA</p>
   </div>
 </footer>
 

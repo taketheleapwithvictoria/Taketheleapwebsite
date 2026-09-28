@@ -1,0 +1,10 @@
+{
+  "note": "Social links shown in the footer and on the Contact page. Leave a url empty to hide it.",
+  "links": [
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/victoria-howe-457a04252/" },
+    { "name": "Instagram", "url": "" },
+    { "name": "Facebook", "url": "" },
+    { "name": "YouTube", "url": "" },
+    { "name": "TikTok", "url": "" }
+  ]
+}

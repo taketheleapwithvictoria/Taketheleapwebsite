@@ -5,9 +5,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("admin");
 
-  // Home, About, Services, Results, Contact are hand-built static pages.
-  // They're copied through untouched — only the Blog is templated/CMS-driven.
-  eleventyConfig.addPassthroughCopy({ "src/pages": "." });
+  // A few root files that are copied untouched (favicon, robots). The sitemap is built from src/sitemap.njk.
+  // The pages themselves (Home, Speaking, Services, About, Contact) are
+  // .njk files in src/ that share one layout: src/_includes/base.njk.
+  eleventyConfig.addPassthroughCopy({
+    "src/pages/favicon.ico": "favicon.ico",
+    "src/pages/robots.txt": "robots.txt",
+  });
 
   eleventyConfig.addCollection("posts", (collectionApi) => {
     return collectionApi.getFilteredByGlob("src/blog/posts/*.md").sort(
@@ -23,15 +27,14 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addFilter("year", () => new Date().getFullYear());
+
   return {
     dir: {
       input: "src",
       includes: "_includes",
       output: "_site",
     },
-    // Only markdown files (blog posts) and .njk files go through templating.
-    // Plain .html pages live in src/pages and are passthrough-copied above,
-    // so they render exactly as authored with no templating risk.
     templateFormats: ["md", "njk"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",

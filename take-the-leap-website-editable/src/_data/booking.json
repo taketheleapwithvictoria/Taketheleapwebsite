@@ -1,0 +1,29 @@
+{
+  "note": "Booking links and prices used across the whole site. Change them here once.",
+  "sessions": [
+    {
+      "id": "30",
+      "length": "30 min",
+      "name": "Quick fix",
+      "price": "$59",
+      "url": "https://scheduler.zoom.us/taketheleapwith_victoria/30-mins-with-victoria",
+      "blurb": "Pitch practice and feedback, a confidence check-in, or focused help with one sticking point."
+    },
+    {
+      "id": "60",
+      "length": "60 min",
+      "name": "Deep dive",
+      "price": "$119",
+      "url": "https://scheduler.zoom.us/taketheleapwith_victoria/60-mins-with-victoria-rl0is7ws",
+      "blurb": "Work through one area properly: your pitch, a presentation, your messaging, marketing or social media."
+    },
+    {
+      "id": "90",
+      "length": "90 min",
+      "name": "Build session",
+      "price": "$199",
+      "url": "https://scheduler.zoom.us/taketheleapwith_victoria/90-mins-with-victoria-j2ux3n0f",
+      "blurb": "We refine, practise or build something together from start to finish. Ideal before a big pitch or launch."
+    }
+  ]
+}

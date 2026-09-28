@@ -1,0 +1,14 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set pages = ["/", "/speaking", "/services", "/about", "/contact", "/blog/"] %}
+{%- for p in pages %}
+  <url><loc>https://taketheleapwithvictoria.com{{ p }}</loc></url>
+{%- endfor %}
+{%- for post in collections.posts %}
+  <url><loc>https://taketheleapwithvictoria.com{{ post.url }}</loc><lastmod>{{ post.date.toISOString().slice(0, 10) }}</lastmod></url>
+{%- endfor %}
+</urlset>
