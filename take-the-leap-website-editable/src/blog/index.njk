@@ -1,29 +1,30 @@
 ---
 layout: base.njk
 title: Blog
+fullTitle: "Blog | Pitching & Communication Tips from Victoria Howe"
 description: Notes on pitching, communication and founder confidence from Victoria Howe.
 ---
-<header class="section" style="padding-bottom:0;">
-  <div class="section-inner reveal">
-    <span class="tag">Field notes</span>
-    <h1 style="max-width:16ch;">Notes on pitching, communication &amp; confidence.</h1>
-    <p class="lede" style="max-width:56ch; font-size:1.1rem;">Practical, unfiltered thinking from a decade of reading people under pressure &mdash; now applied to founders and pitches instead of interview rooms.</p>
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Blog</span>
+    <h1>Notes on <em>pitching.</em></h1>
+    <p class="lede">Practical thinking on pitching, communication and confidence, from a decade of reading people under pressure.</p>
   </div>
-</header>
+</section>
 
-<section class="section">
-  <div class="section-inner">
+<section class="section tight" style="padding-top:0">
+  <div class="wrap">
     <div class="post-grid">
-      {% for post in collections.posts | reverse %}
-      <a href="{{ post.url }}" class="post-card reveal">
-        <div class="post-thumb" style="display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:0.7rem; color:var(--gold-deep); letter-spacing:0.08em;">{{ post.data.fileNo or "FILE" }}</div>
-        <div class="post-body">
-          <div class="post-meta">{{ post.data.category or "Pitching" }} &middot; {{ post.data.readTime or "4 min read" }}</div>
-          <h3>{{ post.data.title }}</h3>
-          <p>{{ post.data.excerpt }}</p>
-        </div>
+      {%- for post in collections.posts | reverse %}
+      <a href="{{ post.url }}" class="post-card">
+        <span class="post-meta">{{ post.data.category or "Pitching" }} · {{ post.data.readTime or "4 min read" }}</span>
+        <h2>{{ post.data.title }}</h2>
+        <p>{{ post.data.excerpt }}</p>
+        <span class="more">Read it →</span>
       </a>
-      {% endfor %}
+      {%- endfor %}
     </div>
   </div>
 </section>
+
+{% include "cta.njk" %}

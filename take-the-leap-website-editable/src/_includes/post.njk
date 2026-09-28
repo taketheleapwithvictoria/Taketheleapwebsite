@@ -1,22 +1,26 @@
 ---
 layout: base.njk
 ---
-<header class="section tight">
-  <div class="section-inner reveal" style="max-width:680px; margin:0 auto;">
-    <div class="post-meta">{{ category or "Pitching" }} &middot; {{ readTime or "4 min read" }}</div>
-    <h1>{{ title }}</h1>
+<article>
+  <header class="page-hero">
+    <div class="wrap post-head">
+      <span class="post-meta">{{ category or "Pitching" }} · {{ readTime or "4 min read" }}</span>
+      <h1>{{ title }}</h1>
+      <p class="date">By Victoria Howe · <time datetime="{{ page.date.toISOString().slice(0, 10) }}">{{ page.date | readableDate }}</time></p>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="post-content">
+      {{ content | safe }}
+    </div>
   </div>
-</header>
+</article>
 
-<section class="section tight">
-  <article class="post-content reveal">
-    {{ content | safe }}
-  </article>
+<section class="section">
+  <div class="wrap">
+    <p style="max-width:680px;margin-inline:auto"><a class="btn btn-line" href="/blog/">← All posts</a></p>
+  </div>
 </section>
 
-<section class="section alt">
-  <div class="section-inner reveal" style="text-align:center;">
-    <h3>Want to work on this together?</h3>
-    <a href="/contact.html" class="btn btn-primary" style="margin-top:16px;">Book a session</a>
-  </div>
-</section>
+{% set ctaText = "Want to work on your pitch together? Book a session, or bring me in to work with your whole cohort." %}
+{% include "cta.njk" %}

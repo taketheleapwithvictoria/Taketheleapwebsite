@@ -1,0 +1,63 @@
+---
+layout: base.njk
+permalink: /contact.html
+fullTitle: "Contact Victoria Howe | Speaking, Masterclasses & 1:1 Sessions | Take the Leap"
+description: "Get in touch with Victoria Howe about speaking at your event, a pitch masterclass for your program, or a 1:1 session. Based in Perth, WA."
+---
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h1>Let's <em>talk.</em></h1>
+    <p class="lede">Speaking, a masterclass for your program, or something you're stuck on. Send me a message and I'll get back to you, usually within a couple of working days.</p>
+  </div>
+</section>
+
+<section class="section tight" style="padding-top:0">
+  <div class="wrap contact-grid">
+    <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hp"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="row">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </div>
+      <div class="row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="row">
+        <label for="topic">What's it about?</label>
+        <select id="topic" name="topic">
+          <option value="speaking">Speaking at an event</option>
+          <option value="workshop">A masterclass or workshop for my program or team</option>
+          <option value="session">A 1:1 session</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="For events: the date, the audience and what you'd like them to walk away with." required></textarea>
+      </div>
+      <button class="btn btn-solid" type="submit">Send message</button>
+    </form>
+
+    <aside class="side">
+      <div class="side-card">
+        <h2>Want a 1:1 session?</h2>
+        <p class="muted">Skip the form and book straight into my calendar.</p>
+        <ul class="sessions">
+          {%- for s in booking.sessions %}
+          <li><a href="{{ s.url }}"><span class="len">{{ s.length }}</span><span class="what">{{ s.name }}</span><b>{{ s.price }}</b><span class="go">Book →</span></a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div class="side-card" style="background:var(--white);border:1px solid var(--line)">
+        <h2>Or reach me directly</h2>
+        <p><a href="mailto:victoria@taketheleapwithvictoria.com">victoria@taketheleapwithvictoria.com</a></p>
+        <p><a href="tel:+61410002378">0410 002 378</a></p>
+        <p>{% for l in social.links | selectattr("url") %}<a href="{{ l.url }}" rel="me noopener">{{ l.name }}</a>{% if not loop.last %} &nbsp;·&nbsp; {% endif %}{% endfor %}</p>
+        <p class="muted" style="font-size:15px">Based in Perth, Western Australia.</p>
+      </div>
+    </aside>
+  </div>
+</section>
