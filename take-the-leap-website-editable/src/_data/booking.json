@@ -1,6 +1,6 @@
 {
   "note": "Booking links and prices used across the whole site. Change them here once.",
-  "evening": "Working during the day? I run evening sessions every second Thursday, 7–9pm (Perth time).",
+  "evening": "Working during the day? I run evening sessions on Thursdays, 7–9pm (Perth time).",
   "sessions": [
     {
       "id": "30",
