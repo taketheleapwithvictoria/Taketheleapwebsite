@@ -347,3 +347,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .testimonial-sm blockquote p { font-size: clamp(17px, 1.6vw, 19px); }
 .testimonial-sm blockquote p::before { font-size: 48px; }
 @media (max-width: 760px) { .testimonial-grid { grid-template-columns: 1fr; gap: 22px; } }
+
+.evening-note { display: block; font-size: 15px; font-weight: 600; color: var(--ink); }
+.evening-note::before { content: "🌙 "; }
