@@ -22,3 +22,8 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/images/pitch-deck-framework.pdf"
+  [headers.values]
+    Content-Disposition = "attachment"
