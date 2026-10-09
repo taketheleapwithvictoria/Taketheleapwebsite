@@ -350,3 +350,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .evening-note { display: block; font-size: 15px; font-weight: 600; color: var(--ink); }
 .evening-note::before { content: "🌙 "; }
+
+/* Free pitch template download */
+.freebie { margin-top: 48px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 44px); align-items: center; background: #fff; border: 2px solid var(--ink); box-shadow: 6px 6px 0 var(--pink); padding: clamp(18px, 3vw, 32px); }
+.freebie-img { display: block; border: 1px solid var(--line); }
+.freebie-img img { display: block; width: 100%; height: auto; }
+.freebie-copy h3 { font-size: clamp(24px, 2.6vw, 30px); font-weight: 700; margin: 8px 0 10px; }
+.freebie-copy p { margin: 0 0 20px; color: var(--ink-soft); }
+.post-freebie { max-width: 680px; margin-inline: auto; }
+.post-freebie .freebie { grid-template-columns: 1fr; }
+@media (max-width: 760px) { .freebie { grid-template-columns: 1fr; } }
