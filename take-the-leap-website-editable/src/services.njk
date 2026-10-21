@@ -1,20 +1,29 @@
 ---
 layout: base.njk
 permalink: /services.html
-fullTitle: "Pitch Coaching & Workshops Perth | 1:1 Sessions from $59 | Take the Leap"
-description: "Book a 30, 60 or 90-minute session with Victoria Howe for help with your pitch, presentation, messaging or marketing. Plus hands-on pitch masterclasses for accelerators and founder programs."
+fullTitle: "Pitching & Executive Communication Perth | Sessions & Workshops | Take the Leap"
+description: "1:1 sessions for early-stage founders from $59, executive communication for established businesses and leaders, and hands-on pitch masterclasses for accelerators and teams. Victoria Howe, Perth."
 ctaText: "Not sure which session you need? Book 30 minutes and we'll work it out together."
 ---
 <section class="page-hero">
   <div class="wrap">
-    <span class="eyebrow">1:1 sessions · Masterclasses · Workshops</span>
+    <span class="eyebrow">Founders &amp; startups · Businesses &amp; leaders · Masterclasses</span>
     <h1>Bring what you're <em>stuck on.</em></h1>
-    <p class="lede">No packages, no retainer, no long onboarding. Book focused, practical time on your pitch, your message or your marketing, sized to what you need right now.</p>
+    <p class="lede">No retainer, no long onboarding. Whether it's your first pitch deck or your next board update, book focused, practical time sized to what you need right now.</p>
+    <div class="cta-row" style="margin-top:22px">
+      <a class="btn btn-line" href="#book">Early-stage founders &amp; startups</a>
+      <a class="btn btn-line" href="#business">Established businesses &amp; leaders</a>
+    </div>
   </div>
 </section>
 
 <section class="section tight" id="book" style="padding-top:0">
   <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Early-stage founders &amp; startups</span>
+      <h2>1:1 sessions</h2>
+      <p>Pitch decks, investor and competition pitches, grant applications and pitch night preparation.</p>
+    </div>
     <div class="book-grid">
       {%- for s in booking.sessions %}
       <article class="book-card{% if s.id == '60' %} pop{% endif %}">
@@ -34,6 +43,27 @@ ctaText: "Not sure which session you need? Book 30 minutes and we'll work it out
   </div>
 </section>
 
+<section class="section" id="business">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Established businesses &amp; leaders</span>
+      <h2>Executive communication</h2>
+      <p>Board updates, presentations, keynotes and team messaging, for leaders who need people to get it the first time.</p>
+    </div>
+    <div class="book-grid">
+      {%- for s in business.sessions %}
+      <article class="book-card{% if s.pop %} pop{% endif %}">
+        <span class="len">{{ s.length }}</span>
+        <span class="price">{{ s.price }}</span>
+        <p>{{ s.blurb }}</p>
+        <a class="btn {% if s.pop %}btn-solid{% else %}btn-line{% endif %}" href="/contact?topic=business">Enquire</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="biz-note">{{ business.note }}</p>
+  </div>
+</section>
+
 <section class="section blush">
   <div class="wrap">
     <div class="sec-head">
@@ -42,6 +72,10 @@ ctaText: "Not sure which session you need? Book 30 minutes and we'll work it out
     </div>
     <ul class="chips">
       <li>Investor pitches</li>
+      <li>Executive communication</li>
+      <li>Board updates</li>
+      <li>Keynotes</li>
+      <li>Team messaging</li>
       <li>Pitch decks</li>
       <li>Grant applications</li>
       <li>Presentations</li>
