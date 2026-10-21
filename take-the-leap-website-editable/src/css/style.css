@@ -360,3 +360,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .post-freebie { max-width: 680px; margin-inline: auto; }
 .post-freebie .freebie { grid-template-columns: 1fr; }
 @media (max-width: 760px) { .freebie { grid-template-columns: 1fr; } }
+
+/* Businesses & leaders tier */
+.biz-link { font-size: 15px; font-weight: 700; color: var(--pink); text-decoration: underline; text-underline-offset: 3px; }
+.biz-note { margin-top: 22px; font-size: 15px; color: var(--ink-soft); }
