@@ -1,0 +1,21 @@
+{
+  "note": "Prices in AUD. Tell me what you're working on and I'll come back to you with a time and a quote.",
+  "sessions": [
+    {
+      "length": "90 min · Clarity Session",
+      "price": "$450",
+      "blurb": "Leave able to explain your business in one clear sentence, with the key messages behind it."
+    },
+    {
+      "length": "3 x 60 min · Executive Communication",
+      "price": "From $1,200",
+      "pop": true,
+      "blurb": "Over six weeks: your core message, a real presentation or board update, then delivery practice."
+    },
+    {
+      "length": "Half day · Team Workshop",
+      "price": "From $2,500",
+      "blurb": "Half a day with your leadership or sales team, so everyone tells the same story."
+    }
+  ]
+}
