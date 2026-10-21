@@ -4,18 +4,24 @@
     {
       "length": "90 min · Clarity Session",
       "price": "$450",
-      "blurb": "Leave able to explain your business in one clear sentence, with the key messages behind it."
+      "blurb": "Leave able to explain your business in one clear sentence, with the key messages behind it.",
+      "time": "90 min",
+      "name": "Clarity Session"
     },
     {
       "length": "3 x 60 min · Executive Communication",
       "price": "From $1,200",
       "pop": true,
-      "blurb": "Over six weeks: your core message, a real presentation or board update, then delivery practice."
+      "blurb": "Over six weeks: your core message, a real presentation or board update, then delivery practice.",
+      "time": "3 x 60 min",
+      "name": "Executive Communication"
     },
     {
       "length": "Half day · Team Workshop",
       "price": "From $2,500",
-      "blurb": "Half a day with your leadership or sales team, so everyone tells the same story."
+      "blurb": "Half a day with your leadership or sales team, so everyone tells the same story.",
+      "time": "Half day",
+      "name": "Team Workshop"
     }
   ]
 }
