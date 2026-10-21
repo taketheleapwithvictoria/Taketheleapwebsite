@@ -58,7 +58,43 @@ description: "Victoria Howe helps founders and leaders communicate so people get
       <h2>Pick the room you need me in</h2>
       <p>I don't do it all for you. I show you how to do it properly, so you can do it again without me.</p>
     </div>
-    <div class="offers">
+    <div class="offers four">
+      <article class="offer" id="book">
+        <span class="tag">Early-stage founders &amp; startups</span>
+        <h3>Stuck? Book a session and get unstuck</h3>
+        <p>Pitches, decks, grant applications, messaging and social media guidance. No retainer, no long commitment.</p>
+        <div class="foot">
+          <ul class="sessions">
+            {%- for s in booking.sessions %}
+            <li><a href="{{ s.url }}"><span class="len">{{ s.length }}</span><span class="what">{{ s.name }}</span><b>{{ s.price }}</b><span class="go">Book →</span></a></li>
+            {%- endfor %}
+          </ul>
+          <span class="evening-note">{{ booking.evening }}</span>
+          <span class="muted" style="font-size:14px">Pick a time that suits you. I'll send an invoice to lock it in.</span>
+        </div>
+      </article>
+      <article class="offer">
+        <span class="tag">Businesses &amp; leaders</span>
+        <h3>Executive communication that lands first time</h3>
+        <p>Board updates, presentations, keynotes and team messaging, for leaders who need people to get it.</p>
+        <div class="foot">
+          <ul class="sessions">
+            {%- for s in business.sessions %}
+            <li><a href="/services#business"><span class="len">{{ s.time }}</span><span class="what">{{ s.name }}</span><b>{{ s.price | replace("From ", "") }}{% if "From" in s.price %}+{% endif %}</b><span class="go">Enquire →</span></a></li>
+            {%- endfor %}
+          </ul>
+          <span class="muted" style="font-size:14px">Tell me what you're working on and I'll come back to you with a time and a quote.</span>
+        </div>
+      </article>
+      <article class="offer">
+        <span class="tag">Masterclasses &amp; workshops</span>
+        <h3>Pitch masterclasses for programs and teams</h3>
+        <p>Hands-on, usually two hours. Founders learn a framework, write their pitch and deliver it live with feedback. Currently running in <strong>Plus Eight</strong> sprint and accelerator programs, and delivered for Innovation Shed.</p>
+        <div class="foot">
+          <span class="note">Pricing on application</span>
+          <a class="btn btn-line" href="/services#workshops">Bring me to your program</a>
+        </div>
+      </article>
       <article class="offer feature">
         <span class="tag">Speaking</span>
         <h3>Keynotes and panels that get people talking</h3>
@@ -71,30 +107,6 @@ description: "Victoria Howe helps founders and leaders communicate so people get
         <div class="foot">
           <span class="note">Events, summits, conferences</span>
           <a class="btn" href="/speaking">See talks &amp; enquire</a>
-        </div>
-      </article>
-      <article class="offer">
-        <span class="tag">Masterclasses &amp; workshops</span>
-        <h3>Pitch masterclasses for sprints and accelerator programs</h3>
-        <p>Hands-on, usually two hours. Founders learn a framework, write their pitch and deliver it live with feedback. Currently running in <strong>Plus Eight</strong> sprint and accelerator programs, and delivered for Innovation Shed.</p>
-        <div class="foot">
-          <span class="note">Pricing on application</span>
-          <a class="btn btn-line" href="/services#workshops">Bring me to your program</a>
-        </div>
-      </article>
-      <article class="offer" id="book">
-        <span class="tag">1:1 sessions</span>
-        <h3>Stuck? Book a session and get unstuck</h3>
-        <p>Pitches, decks, grant applications, messaging and social media guidance. No retainer, no long commitment.</p>
-        <div class="foot">
-          <ul class="sessions">
-            {%- for s in booking.sessions %}
-            <li><a href="{{ s.url }}"><span class="len">{{ s.length }}</span><span class="what">{{ s.name }}</span><b>{{ s.price }}</b><span class="go">Book →</span></a></li>
-            {%- endfor %}
-          </ul>
-          <span class="evening-note">{{ booking.evening }}</span>
-          <span class="muted" style="font-size:14px">Pick a time that suits you. I'll send an invoice to lock it in.</span>
-          <a class="biz-link" href="/services#business">Established business or leadership team? See sessions for businesses &amp; leaders →</a>
         </div>
       </article>
     </div>
