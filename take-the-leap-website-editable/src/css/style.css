@@ -364,3 +364,5 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* Businesses & leaders tier */
 .biz-link { font-size: 15px; font-weight: 700; color: var(--pink); text-decoration: underline; text-underline-offset: 3px; }
 .biz-note { margin-top: 22px; font-size: 15px; color: var(--ink-soft); }
+.offers.four { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) { .offers.four { grid-template-columns: 1fr; } }
