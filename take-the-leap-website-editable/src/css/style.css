@@ -366,3 +366,4 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .biz-note { margin-top: 22px; font-size: 15px; color: var(--ink-soft); }
 .offers.four { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 900px) { .offers.four { grid-template-columns: 1fr; } }
+.freebie { scroll-margin-top: 110px; }
