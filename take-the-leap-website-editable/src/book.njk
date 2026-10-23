@@ -1,0 +1,79 @@
+---
+layout: base.njk
+permalink: /book.html
+fullTitle: "Purpose & Passion | Signed copies from Victoria Howe | Take the Leap"
+description: "Order a signed copy of Purpose & Passion, the collection of stories from women creating change. Victoria Howe wrote the Take the Leap chapter."
+---
+<section class="page-hero">
+  <div class="wrap split">
+    <figure class="photo" style="max-width:420px">
+      <img src="/images/purpose-and-passion-cover.webp" alt="Cover of Purpose & Passion, compiled by Peace Mitchell and Katy Garner" width="440" height="660" fetchpriority="high">
+    </figure>
+    <div>
+      <span class="eyebrow">The book</span>
+      <h1>Purpose <em>&amp;</em> Passion</h1>
+      <p class="lede">Real stories from women who listened to the call to step into their purpose, and found the passion to make it happen. Compiled by Peace Mitchell and Katy Garner, published by Women Changing the World Press.</p>
+      <p class="lede" style="margin-top:14px">I wrote the <b>"Take the Leap"</b> chapter. It's the story that gave this business its name: take the opportunity, move through the fear, and act before you feel ready.</p>
+      <div class="cta-row" style="margin-top:24px">
+        <a class="btn btn-solid" href="#order">Order a signed copy · $35</a>
+        <a class="btn btn-line" href="https://www.amazon.com.au/Purpose-Passion-Peace-Mitchell/dp/1763658244" rel="noopener" target="_blank">Buy on Amazon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight blush" id="order">
+  <div class="wrap contact-grid">
+    <form class="form" name="book-order" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/book-thanks">
+      <input type="hidden" name="form-name" value="book-order">
+      <p class="hp"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="row">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </div>
+      <div class="row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="row">
+        <label for="qty">How many copies?</label>
+        <select id="qty" name="copies">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5+">5 or more</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="delivery">Delivery</label>
+        <select id="delivery" name="delivery">
+          <option value="post">Post within Australia (+$12)</option>
+          <option value="collect">Collect from me at an event (free)</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="address">Postal address</label>
+        <textarea id="address" name="address" autocomplete="street-address" placeholder="Leave blank if you're collecting at an event." style="min-height:90px"></textarea>
+      </div>
+      <div class="row">
+        <label for="signed-to">Who should I sign it to?</label>
+        <input type="text" id="signed-to" name="signed-to" placeholder="e.g. To Sarah, take the leap!">
+      </div>
+      <button class="btn btn-solid" type="submit">Order my signed copy</button>
+    </form>
+
+    <aside class="side">
+      <span class="eyebrow">How it works</span>
+      <h2 style="margin-block:12px 14px">Signed by me, posted by me.</h2>
+      <ol style="padding-left:20px;line-height:1.7">
+        <li>Send your order using the form.</li>
+        <li>I'll email you an invoice: $35 a copy, plus $12 postage within Australia.</li>
+        <li>Once it's paid, I sign your copy and post it out.</li>
+      </ol>
+      <p class="muted" style="margin-top:16px">Outside Australia? The <a href="https://www.amazon.com.au/Purpose-Passion-Peace-Mitchell/dp/1763658244" rel="noopener" target="_blank">Amazon listing</a> is your quickest option.</p>
+    </aside>
+  </div>
+</section>
+
+{% include "cta.njk" %}
