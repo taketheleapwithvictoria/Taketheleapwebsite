@@ -4,7 +4,7 @@ title: What makes a pitch compelling
 date: 2026-10-23
 category: Pitching
 readTime: 4 min read
-fileNo: FILE 016
+fileNo: FILE 017
 excerpt: The pitches I remember aren't the most polished ones. They're the ones where you can see the founder lived the problem.
 tags: posts
 ---
